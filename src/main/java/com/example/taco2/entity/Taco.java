@@ -1,15 +1,19 @@
 package com.example.taco2.entity;
 import java.util.*;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
+import org.apache.ibatis.annotations.Many;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Data
-@Table
+@Entity
 public class Taco {
     @Id
     private Long id;
     private String name;
+    @ManyToMany
     private List<Ingredient> ingredients;
     private Date createdAt = new Date();
 }
