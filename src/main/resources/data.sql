@@ -1,8 +1,24 @@
-delete from Ingredient_Ref;
-delete from Taco;
-delete from Taco_Order;
+# delete
+# from Ingredient_Ref;
+# delete
+# from Taco;
+# delete
+# from Taco_Order;
 
-delete from Ingredient;
+delete
+from Ingredient;
+#
+# create table if not exists taco_order_tacos
+# (
+#     order_id bigint not null,
+#     taco_id  bigint not null
+# );
+#
+# create table if not exists taco_ingredients
+# (
+#     taco_id        bigint     not null,
+#     ingredients_id varchar(4) not null
+# );
 # insert into Ingredient (id, name, type)
 # values ('FLTO', 'Flour Tortilla', 'WRAP');
 # insert into Ingredient (id, name, type)

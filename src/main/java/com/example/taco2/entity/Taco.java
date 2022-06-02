@@ -1,19 +1,29 @@
 package com.example.taco2.entity;
-import java.util.*;
-import lombok.Data;
-import org.apache.ibatis.annotations.Many;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import lombok.Data;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
 public class Taco {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
     private String name;
-    @ManyToMany
-    private List<Ingredient> ingredients;
+    @ManyToMany(targetEntity = Ingredient.class)
+    private List<Ingredient> ingredients = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "taco_order_id")
+    private TacoOrder tacoOrder;
     private Date createdAt = new Date();
+
+    public void addIngredient(Ingredient ingredient) {
+        this.ingredients.add(ingredient);
+    }
 }

@@ -14,7 +14,7 @@ public class TacoOrder implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String deliveryName;
     private String deliveryStreet;
@@ -23,10 +23,10 @@ public class TacoOrder implements Serializable {
     private String deliveryZip;
     private String ccNumber;
     private String ccExpiration;
-    private String ccCVV;
+    private String ccCvv;
     private Date createdAt = new Date();
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "tacoOrder")
     private List<Taco> tacos = new ArrayList<>();
 
     public void addTaco(Taco taco) {
