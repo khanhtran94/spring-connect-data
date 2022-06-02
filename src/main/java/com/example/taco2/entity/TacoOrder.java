@@ -26,7 +26,10 @@ public class TacoOrder implements Serializable {
     private String ccCvv;
     private Date createdAt = new Date();
 
-    @OneToMany(mappedBy = "tacoOrder")
+    //thuoc tinh cascade = CascadeType.ALL quyet dinh viec luu taco hay khong
+    //todo: quenstion nhung khong hieu sao luu duoc taco nhung khong luu duoc khoa ngoai la tacoOrderId
+    //fiel taco_order_id cua taco
+    @OneToMany(mappedBy = "tacoOrder", cascade = CascadeType.ALL)
     private List<Taco> tacos = new ArrayList<>();
 
     public void addTaco(Taco taco) {
