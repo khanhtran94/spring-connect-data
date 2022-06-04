@@ -1,13 +1,19 @@
 package com.example.taco2;
 
 import com.example.taco2.data.IngredientRepository;
+import com.example.taco2.data.OrderRepository;
+import com.example.taco2.data.TacoRepository;
 import com.example.taco2.entity.Ingredient;
+import com.example.taco2.entity.Taco;
+import com.example.taco2.entity.TacoOrder;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import com.example.taco2.entity.Ingredient.Type;
+
+import java.util.Date;
 
 @SpringBootApplication
 public class Taco2Application {
@@ -31,18 +37,17 @@ public class Taco2Application {
 //        };
 //    }
 //    @Bean
-//    public ApplicationRunner dataLoaderApp(IngredientRepository repo) {
+//    public ApplicationRunner dataLoaderApp(IngredientRepository repo, TacoRepository tacoRepository, OrderRepository orderRepository) {
 //        return args -> {
-//            repo.save(new Ingredient("FLTO", "Flour Tortilla", Type.WRAP));
-//            repo.save(new Ingredient("COTO", "Corn Tortilla", Type.WRAP));
-//            repo.save(new Ingredient("GRBF", "Ground Beef", Type.PROTEIN));
-//            repo.save(new Ingredient("CARN", "Carnitas", Type.PROTEIN));
-//            repo.save(new Ingredient("TMTO", "Diced Tomatoes", Type.VEGGIES));
-//            repo.save(new Ingredient("LETC", "Lettuce", Type.VEGGIES));
-//            repo.save(new Ingredient("CHED", "Cheddar", Type.CHEESE));
-//            repo.save(new Ingredient("JACK", "Monterrey Jack", Type.CHEESE));
-//            repo.save(new Ingredient("SLSA", "Salsa", Type.SAUCE));
-//            repo.save(new Ingredient("SRCR", "Sour Cream", Type.SAUCE));
+//            Taco taco = new Taco();
+//            taco.setName("test");
+//            TacoOrder tacoOrder = new TacoOrder();
+//            tacoOrder.addTaco(taco);
+//            tacoOrder.setDeliveryName("TEST");
+//            orderRepository.save(tacoOrder);
+//
+//            taco.setTacoOrder(tacoOrder);
+//            tacoRepository.save(taco);
 //        };
 //    }
 }
