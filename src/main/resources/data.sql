@@ -5,8 +5,8 @@
 # delete
 # from Taco_Order;
 
-delete
-from Ingredient;
+# delete
+# from Ingredient;
 #
 # create table if not exists taco_order_tacos
 # (
